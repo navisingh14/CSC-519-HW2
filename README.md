@@ -1,5 +1,5 @@
-# CSC-519-HW1-2
-Devops HW1part2 - VM provisioning through APIs
+# CSC-519-HW2
+Devops HW2 - Automatic Test Generation and Coverage Testing
 
 ### Name:                                                          
 Navjot Singh 
