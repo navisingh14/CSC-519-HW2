@@ -93,7 +93,7 @@ function constraints(filePath) {
                                 // Push a new constraint
                                 functionConstraints[funcName].constraints[ident].push(new Constraint({
                                     ident: params[p],
-                                    value:  `${ident} = {${property_name}: true}`,
+                                    value:  `${ident} = {'${property_name}': true}`,
                                     funcName: funcName,
                                     kind: "string",
                                     operator : child.operator,

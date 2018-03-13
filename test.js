@@ -165,7 +165,7 @@ try{
 	mock.restore();
 } catch(e) {}
 try { subject.normalize(''); } catch (e) {} 
-try { subject.format('', '', options = {normalize: true}); } catch (e) {} 
+try { subject.format('', '', options = {'normalize': true}); } catch (e) {} 
 try { subject.format('', '', false); } catch (e) {} 
 try { subject.blackListNumber('NEQ - "212"'); } catch (e) {} 
-try { subject.blackListNumber("2122086579"); } catch (e) {} 
+try { subject.blackListNumber("2122634892"); } catch (e) {} 
