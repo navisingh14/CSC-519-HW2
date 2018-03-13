@@ -224,6 +224,31 @@ function constraints(filePath) {
                                 expression: expression
                             }));
                         }
+                        else{
+                            if(params.length == 1){
+                                let ident = params[0];
+                                let phone_number = new randexp(/[0-9]{10}/).gen();
+                                phone_number = `${match[1]}` + phone_number.substring(3,phone_number.length);
+
+                                let constraints = functionConstraints[funcName].constraints[ident];
+                                constraints.push(new Constraint({
+                                    ident: ident,
+                                    value: `'NEQ - ${rightHand}'`,
+                                    funcName: funcName,
+                                    kind: "string",
+                                    operator : child.operator,
+                                    expression: expression
+                                }));
+                                constraints.push(new Constraint({
+                                    ident: ident,
+                                    value: `"${phone_number}"`,
+                                    funcName: funcName,
+                                    kind: "string",
+                                    operator : child.operator,
+                                    expression: expression
+                                }));
+                            }
+                        }
                     }
                 }
 
@@ -304,7 +329,6 @@ function constraints(filePath) {
                     }
                 }
 
-                // Handle 'random phonenumber' case 
 
             });
             // console.log( functionConstraints[funcName]);
