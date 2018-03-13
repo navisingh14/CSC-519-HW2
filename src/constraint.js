@@ -77,7 +77,7 @@ function constraints(filePath) {
             // Traverse function node.
             traverse(node, function(child) {
 
-                // Handle equivalence expression
+                // Handle properties of a parameter in an expression - normalize
                 if( child.type === "UnaryExpression" && child.argument.type === "MemberExpression"){
                     {
                         // Get expression from original source code:
@@ -155,7 +155,7 @@ function constraints(filePath) {
                     }
                 }
 
-                // Handle fs.readFileSync
+                // Handle fs.readDirSync
                 if( child.type === "CallExpression" && child.callee.property && child.callee.property.name === "readdirSync" ) {
 
                     // Get expression from original source code:
@@ -189,7 +189,7 @@ function constraints(filePath) {
                 }
 
 
-                // Handle equivalence expression
+                // Handle equivalence expression and random phonenumbers
                 if(_.get(child, 'type') === 'BinaryExpression' && _.includes(['!=', '!==', '==', '==='], _.get(child, 'operator'))) {
                     if(_.get(child, 'left.type') === 'Identifier') {
 
@@ -291,7 +291,7 @@ function constraints(filePath) {
                     }
                 }
 
-                // Handle 'string' substring 
+                // Handle 'string' substring  - "indexOf"
                 if(_.get(child, 'type') === 'BinaryExpression' && _.includes([ '==', '!=', '===', '!=='], _.get(child, 'operator'))) {
                     if(_.get(child, 'left.type') === 'CallExpression' && _.get(child, 'left.callee.type') === 'MemberExpression') {
 
