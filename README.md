@@ -14,5 +14,5 @@ nsingh9@ncsu.edu
 [Constraint.js](https://github.ncsu.edu/nsingh9/CSC-519-HW2/blob/master/src/constraint.js)
 
 #### Screenshot of the test cases passing
-https://github.ncsu.edu/nsingh9/CSC-519-HW2/blob/master/Subject_js_passing.png
+![Coverage report](https://github.ncsu.edu/nsingh9/CSC-519-HW2/blob/master/Subject_js_passing.png)
 
